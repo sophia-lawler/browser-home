@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "new tab default homepage",
+  "version": "1.0",
+  "description": "Open your new tabs with style",
+  "author": "Sophia Lawler",
+  "chrome_url_overrides" : {
+    "newtab": "server/public/index.html"
+  },
+  "permissions": [
+    "storage",
+    "http://localhost:3000/",
+    "https://goweather.herokuapp.com/weather/"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png"
+  },
+
+  "content_scripts": [{
+    "js": ["/bundle.js"],
+    "matches": ["http://*/*"]
+}]
+}
